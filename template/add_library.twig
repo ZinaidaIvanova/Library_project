@@ -1,0 +1,27 @@
+{% extends "layout.twig"%}
+{% block content %}
+<div class="col-sm-10 content">
+  <div class="row-fluid">
+    <h2>Наличие книг в библиотеке</h2>
+      <form method="post" id="lib_form" enctype="multipart/form-data">
+        <input type="text" id="book_id" value="{{ info.id }}" hidden>
+        {% for lib in libraries %}
+        <div class="lib_info">
+          <input type="text" name="lib_id" value="{{ lib.id }} " hidden>
+          <input type="text" name="lib_name" class="library_form input" value="{{ lib.name }}" disabled>
+          <input type="text" name="address" class="address_form input" value="{{ lib.address }}" disabled>
+          <input type="text" class="num_form input" name="num" placeholder="Укажите количество книг">
+          <div class="clear"></div>   
+        </div>
+        {% endfor %}
+        <div class="message">
+              <input type="submit" id="add_book_in_library" value="Добавить" class="btn button pull-left">
+              <div id="library_info"></div>
+              <div class="clear"></div>
+            </div> 
+      </form>
+    <div class="clear bottom"></div>
+  </div>  
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "layout.twig"%}
+{% block content %}
+<div class="col-sm-10 content">
+  <div class="row-fluid">
+    <h2>Загрузка новой обложки</h2>
+  	<form method="post" id="image_insert" enctype="multipart/form-data" accept="image/*">
+      
+      <input type="hidden" id="book_id" value="{{ info.id }}">
+
+      <p class="input_name">Автор</p>
+      <input type="text" disabled id="author_image_edit" class="input_field" value="{{info.name}}">
+
+      <p class="input_name">Название</p>
+      <input type="text" disabled id="title_image_edit" class="input_field" value="{{info.title}}">
+
+      <p class="input_name">Обложка</p>
+      <input type="file"  id="upload" name="load_file"> 
+
+      <div class="message">
+        <input type="submit" id="image_insert_btn" value="Загрузить" class="btn button pull-left">
+        <div id="image_edit_info"></div>
+        <div class="clear"></div>
+      </div>   
+    </form>
+    <div class="clear bottom"></div>
+  </div>  
+</div>
+</div>
+{% endblock %}

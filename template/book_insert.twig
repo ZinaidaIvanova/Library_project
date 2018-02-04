@@ -1,0 +1,36 @@
+<form id="insert_book_form" method="post" id="bookInsert" >
+
+  <p class="input_name">Автор</p>
+  <input list="author" id="authorInsertBook" class="input_field" placeholder="Выберите автора" required>
+  <datalist id="author">
+    {% for author in authors %}
+      <option value="{{author.item}}"></option>
+    {% endfor %}
+  </datalist>
+
+  <p class="input_name">Название</p>
+  <input type="text" class="input_field" id="titleInsert" placeholder="Введите название" required="required">
+
+  <p class="input_name">Жанр</p>
+  <input list="genre" class="input_field" id="genreInsert" placeholder="Выберите жанр" required>
+  <datalist id="genre">
+    {% for genre in genres %}
+      <option value="{{genre.item}}"></option>
+    {% endfor %}
+  </datalist>
+
+  <p class="input_name">ISBN</p>
+  <input type="text" class="input_field" id="isbnInsert" placeholder="Введите ISBN" required>
+
+  <p class="input_name">Описание</p>
+  <textarea class="text_input" id="descriptionInsert" placeholder="Введите описание" required></textarea>    
+
+  <div class="message">
+    <input type="submit" id="book_insert_btn" value="Добавить" class="btn button pull-left">
+    <div id="book_insert_info"></div>
+    <div class="clear"></div>
+  </div>
+  
+</form>
+<div class="clear bottom"></div>
+</div>

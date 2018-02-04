@@ -1,0 +1,30 @@
+<form name="edit_book" method="post" id="book_edit">
+  <p class="input_name">Автор</p>
+  <input list="author" id="author_old_edit" class="input_field" placeholder="Выберите автора">
+
+  <p class="input_name">Название</p>
+  <input list="books" id="title_old_edit" class="input_field" placeholder="Выберите название" disabled>
+  <datalist id="books"></datalist> 
+
+  <p class="input_name">Новый автор</p>
+  <input list="author" name="new_author_name" id="author_new_edit" class="input_field" placeholder="Выберите нового автора" disabled>
+
+  <p class="input_name">Новое название</p>
+  <input type="text" id="title_new_edit" class="input_field" placeholder="Введите новое название" disabled>
+
+  <p class="input_name">Новый жанр</p>
+  <input list="genre" id="genre_new_edit" class="input_field" placeholder="Выберите новый жанр" disabled>
+
+  <p class="input_name">ISBN</p>
+  <input type="text" class="input_field" id="isbn_new_edit" placeholder="Введите новый ISBN" disabled>
+
+  <p class="input_name">Новое описание</p>
+  <textarea class="text_input" id="description_new_edit" placeholder="Введите новое описание" disabled></textarea>
+
+  <div class="message">
+    <input type="submit" id="book_edit_btn" value="Изменить" class="btn button pull-left">
+    <div id="book_edit_info"></div>
+    <div class="clear"></div>
+  </div>
+</form>
+<div class="clear bottom"></div>

@@ -1,0 +1,16 @@
+{{ include ("head.twig") }}  
+<div class="container">
+  <div class="col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2 login">
+    <form action="reghandler.php" method="post" class="form-signin" role="form">
+      <h2 class="form-signin-heading">Регистрация</h2>
+      <input type="text" id="login" class="form-control bottom" placeholder="Логин" required>
+      <input type="text" id="email" class="form-control bottom" placeholder="e-mail" required>
+      <input type="password" id="pass" class="form-control bottom" placeholder="Пароль" required>
+      <input type="password" id="passReapit" class="form-control bottom" placeholder="Повтор пароля" required>
+      <div class="registration_info form-control bottom" id="reg_info"></div>
+      <button class="btn btn-large button btn-block" id="reg_btn" type="submit">Зарегистрироваться</button>
+    </form>
+  </div>
+</div>
+{{ include ("script.twig") }}
+{{ include("body_end.twig") }}

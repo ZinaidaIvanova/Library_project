@@ -1,0 +1,20 @@
+<div class="col-sm-2 one_info_img">
+	<img src="{{ info.image }}">
+</div>
+
+<div class="col-sm-10">
+ 	<h3 class="one_info_header">{{ info.title }}</h3>
+ 	<p><span>Автор:</span> {{ info.name }}</p>
+ 	<p><span>Оценка</span>
+    <span class="avg_val" id="avg">
+    {% if info.avgVal %} 
+      {{ info.avgVal }}
+    {% else %}  
+      0  
+    {% endif %}
+    </span>  
+    из 10
+  </p> 
+ 	<p><span>ISBN:</span> {{ info.isbn }}</p>
+ 	<p class="last">{{ info.description }}</p>
+</div>

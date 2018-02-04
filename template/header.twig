@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="row-fluid">
+   <div class="col-xs-12">
+    <div class="header">
+
+      <div class="col-sm-3 col-xs-2 logo">
+        <a href="/library/index.php">Библиотека</a>
+      </div>
+
+      <div class="col-sm-6 col-sm-offset-3 col-xs-12">
+        <ul class="nav">
+          {% if log.status == true %}
+            {{ include ("auth.twig") }}
+          {% else %}
+            {{ include ("logoff.twig") }}
+          {% endif %}
+        </ul> 
+
+        <form action="search.php" class="navbar-form pull-right search_form" method="post">
+          <input class="search_input" type="search" placeholder="Введите поисковый запрос" name="searchQuery">
+          <button type="submit" class="btn btn-default button">Найти</button>
+        </form>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>

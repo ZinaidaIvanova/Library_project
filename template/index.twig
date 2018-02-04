@@ -1,0 +1,46 @@
+{% extends "layout.twig"%}
+{% block content %}
+<div class="col-sm-10 content">
+  <div class="row-fluid">
+    {% if log.rights == 'admin' %}
+      <div class="col-sm-6 col-xs-12">
+        <div class="well book_elem">
+          <a class="add_book btn-block" href="/library/add_book.php">Добавить новую книгу</a>
+        </div>
+      </div>  
+    {% endif %}
+
+    {% for book in books %}
+      {% if book.book_id %}
+        <div class="col-sm-6 col-xs-12">
+          <div class="well book_elem">
+            <div class="pull-left cover">
+              <a href="/library/book.php?book_id={{ book.book_id}}">
+                <img class="img-rounded img-responsive" src="{{book.image}}">
+              </a>
+            </div>
+            
+            <h3>
+              <a href="/library/book.php?book_id={{ book.book_id}}">
+                {{book.title}}
+              </a>
+            </h3>
+            
+            <div>
+              <h4>{{ book.name }}</h4>
+              <p>{{ book.description }}</p>
+            </div>
+            <div class="clear"></div>
+          </div>  
+        </div>
+      {% endif %}
+    {% endfor %}
+  <div class="clear"></div>
+  
+  {% if nav.total != 1 %}
+    {{ include ("pagination.twig") }}
+  {% endif %}
+</div>
+</div>
+</div>
+{% endblock %}

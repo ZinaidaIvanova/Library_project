@@ -1,0 +1,22 @@
+{% extends "layout.twig"%}
+{% block content %}
+<div class="col-sm-10 сol-xs-12">
+  {% if log.rights == 'admin' %}
+	  <div class="list_header bottom">
+      <a class="btn-block btn button" href="/library/add_author.php">Добавить нового автора</a>
+    </div>
+  {% endif %} 
+   
+  {% for list in lists %}
+    {% if list.numberOfBooks != 0 or log.rights == 'admin' %}
+      <div class="list">
+        <a class="btn-block" href="/library/list_author.php?author_id={{ list.id }}">
+          {{ list.item }}
+          <span>{{ list.numberOfBooks }}</span>
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div> 
+</div> 
+{% endblock %}

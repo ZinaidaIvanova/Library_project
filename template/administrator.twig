@@ -1,0 +1,99 @@
+{% extends "layout.twig"%}
+{% block content %}
+<div class="col-sm-10 content">
+  <div class="col-xs-12">
+    <div class="accordion» id=«accordion2">
+      <div class="accordion-group">
+        <div class="accordion-heading heading">
+          <a href="#collapseOne" class="accordion-toggle btn-block button-heading" data-toggle="collapse" data-parent="#accordion2">
+            Добавить автора
+          </a>        
+        </div>
+        <div id="collapseOne" class="accordion-body collapse form_inner">
+          <div class="accordion-inner">
+            {{ include("author_insert.twig") }}
+          </div>
+        </div>
+
+        <div class="accordion-heading heading">
+          <a href="#collapseTwo" class="accordion-toggle button-heading btn-block" data-toggle="collapse" data-parent="#accordion2">
+            Добавить книгу
+          </a>        
+        </div>
+        <div id="collapseTwo" class="accordion-body collapse">
+          <div class="accordion-inner">
+            {{ include("book_insert.twig") }}
+          </div>
+        </div>
+
+        <div class="accordion-heading heading">
+          <a href="#collapseThree" class="accordion-toggle button-heading btn-block" data-toggle="collapse" data-parent="#accordion2">
+            Редактировать книгу
+          </a>        
+        </div>
+        <div id="collapseThree" class="accordion-body collapse">
+          <div class="accordion-inner">
+            {{ include("book_edit.twig") }}
+          </div>
+        </div>
+
+        <div class="accordion-heading heading">
+          <a href="#collapseFour" class="accordion-toggle button-heading btn-block" data-toggle="collapse" data-parent="#accordion2">
+            Загрузить обложку
+          </a>        
+        </div>
+        <div id="collapseFour" class="accordion-body collapse">
+          <div class="accordion-inner">
+            {{ include("image_edit.twig") }}
+          </div>
+        </div>
+
+        <div class="accordion-heading heading">
+          <a href="#collapseFive" class="accordion-toggle button-heading btn-block" data-toggle="collapse" data-parent="#accordion2">
+            Удалить книгу
+          </a>        
+        </div>
+        <div id="collapseFive" class="accordion-body collapse">
+          <div class="accordion-inner">
+            {{ include("book_delete.twig") }} 
+          </div>
+        </div>
+      
+        <div class="accordion-heading heading">
+          <a href="#collapseSix" class="accordion-toggle button-heading btn-block" data-toggle="collapse" data-parent="#accordion2">
+            Добавить пользователя
+          </a>        
+        </div>
+        <div id="collapseSix" class="accordion-body collapse">
+          <div class="accordion-inner">
+            {{ include("user_insert.twig") }}
+          </div>
+        </div>
+      
+        <div class="accordion-heading heading">
+          <a href="#collapseSeven" class="accordion-toggle btn-block button-heading" data-toggle="collapse" data-parent="#accordion2">
+            Редактировать пользователя
+          </a>        
+        </div>
+        <div id="collapseSeven" class="accordion-body collapse">
+          <div class="accordion-inner">
+            {{ include("user_edit.twig") }}
+          </div>        
+        </div>
+
+        <div class="accordion-heading heading">
+          <a href="#collapseEight" class="accordion-toggle btn-block button-heading" data-toggle="collapse" data-parent="#accordion2">
+            Удалить пользователя
+          </a>        
+        </div>
+        <div id="collapseEight" class="accordion-body collapse">
+          <div class="accordion-inner">
+            {{ include("user_delete.twig") }}
+          </div>
+        </div>     
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}

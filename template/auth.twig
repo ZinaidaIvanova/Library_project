@@ -1,0 +1,12 @@
+<li class="pull-right">
+  <a href="/library/logoff.php">Выход</a>
+</li>
+<li class="pull-right">
+  {% if log.rights == 'admin' %}
+    <a href="/library/administrator.php">
+  {% else %}
+    <a href="/library/profile.php">
+  {% endif %}
+      {{ log.login }}
+    </a>
+</li>

@@ -1,0 +1,26 @@
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+{% if page.name == 'administrator' %}
+  <script src="js/author_insert.js"></script>
+  <script src="js/book_insert.js"></script>
+  <script src="js/book_edit.js"></script>
+  <script src="js/book_delete.js"></script>
+  <script src="js/user_insert.js"></script>
+  <script src="js/user_edit.js"></script>
+  <script src="js/user_delete.js"></script>
+  <script src="js/image_insert.js"></script>
+{% elseif page.name == 'book' %}
+  <script src="js/coment.js"></script>
+{% elseif page.name == 'registration'  %}
+  <script src="js/registration.js"></script>
+{% elseif page.name == 'add_book' %}
+  <script src="js/add_book.js"></script>
+{% elseif page.name == 'change' %}
+  <script src="js/change.js"></script>
+{% elseif page.name == 'add_author' %}
+  <script src="js/add_author.js"></script>
+{% elseif page.name == 'library' %}
+  <script src="js/add_library.js"></script>
+{% elseif page.name == 'auth' %}
+  <script src="js/auth.js"></script>
+{% endif %}

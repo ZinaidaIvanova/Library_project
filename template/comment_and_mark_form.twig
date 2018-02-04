@@ -1,0 +1,27 @@
+<form method="post">
+  <div class="marks">
+    <div class="marks_input pull-left">
+      <p>Оценка</p>
+    </div>
+    <select size="1" id="mark">
+      {% for i in 0 .. 10 %}
+        <option value="{{ i }}">{{ i }}</option>
+      {% endfor %}
+    </select>
+    <div class="clear"></div>
+  </div>
+  
+  <input type="hidden" id="book_id" value="{{ info.id }}">
+  <input type="hidden" id="user_id" value="{{ log.id }}">
+  <input type="hidden" id="login" value="{{ log.login }}">
+  <textarea  id="comment_text" class="review_input" placeholder="Текст отзыва"></textarea>
+  <div class="clear"></div>
+  
+  <div class="message">
+    <input type="submit" id="send_comment_btn" class="btn button pull-left" name="submit" value="Добавить">
+    <div id="comment_info"></div>
+    <div class="clear"></div>
+  </div>          
+  <div class="clear bottom"></div>
+</form>
+<div class="clear bottom"></div>

@@ -1,0 +1,31 @@
+{% extends "layout.twig"%}
+{% block content %}
+<div class="col-sm-10 content">
+	<div class="row-fluid one_info">
+    <div class="col-sm-4">
+    	<img src="{{info.user_image}}" alt="Фото не загружено">
+    </div>
+
+    <div class="col-sm-8">
+      <h3 class="one_info_header">Мой профиль</h3>
+      {% block form %}
+      {% endblock %}
+    </div>
+
+    <div class="col-xs-12">
+      <h3 class="one_info_header">Мои отзывы</h3>
+      {% for com in comments %}
+        <div class="well comment">
+          <div class="pull-left">Книга "{{ com.title }}"</div>      
+          <div class="pull-right">Оценка {{ com.mark }} из 10</div>
+          <div class="clear"></div>
+          <div class="text">{{ com.comment_text}}</div>
+          <div class="pull-left">{{ com.comment_date }}</div>
+          <div class="clear"></div>
+        </div>
+      {% endfor %}	 	
+    </div>
+	</div>
+</div>
+</div>
+{% endblock %}

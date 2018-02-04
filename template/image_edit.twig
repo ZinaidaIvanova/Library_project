@@ -1,0 +1,19 @@
+<form method="post" id="image_insert" enctype="multipart/form-data" accept="image/*">
+  
+  <p class="input_name">Автор</p>
+  <input list="author" id="author_image_edit" class="input_field" placeholder="Выберите автора">
+
+  <p class="input_name">Название</p>
+  <input list="books" id="title_image_edit" class="input_field" placeholder="Выберите название" disabled>
+  <datalist id="books"></datalist> 
+
+  <p class="input_name">Обложка</p>
+  <input type="file"  id="upload" name="load_file"  disabled> 
+
+  <div class="message">
+    <input type="submit" id="image_insert_btn" value="Загрузить" class="btn button pull-left">
+    <div id="image_edit_info"></div>
+    <div class="clear"></div>
+  </div>   
+</form>
+<div class="clear bottom"></div>

@@ -1,0 +1,75 @@
+<div class="col-sm-12 top">
+ 	
+  <ul class="nav nav-tabs nav-justified" role="tablist">
+    <li role="presentation" class="active tab_header">
+	  	<a href="#tab1" role="tab" data-toggle="tab">Наличие</a>
+	  </li>
+	  <li role="presentation" class="tab_header">
+		  <a href="#tab2" role="tab" data-toggle="tab">Отзывы</a>
+	  </li>
+  </ul>
+  
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="tab1">
+      {% if accessibility_ind.sum != 0 %}
+        <div class="library_header well">
+          <div class="library">Название библиотеки</div>
+          <div class="address">Адрес библиотеки</div>
+          <div class="num">Количесто доступных книг</div>
+          <div class="clear"></div>
+        </div>
+        
+        {% for acc in accessibility %}
+          <div class="well">
+            <div class="library">{{ acc.name_of_library }}</div>
+            <div class="address">{{ acc.address }}</div>
+            <div class="num">{{ acc.number_of_book }}</div>
+            <div class="clear"></div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="info">
+          Информация о наличии в данный момент отсутствует
+        </div>
+      {% endif %}             
+      
+      {% if log.rights == 'admin' %} 
+        <div class="list_header bottom">
+          <a class="btn-block btn button" href="/library/add_library.php?book_id={{ info.id }}">
+          {% if accessibility_ind.sum == 0 %}
+            Добавить наличие книг
+          {% else %}
+            Изменить наличие книг
+          {% endif %}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+
+    <div role="tabpanel" class="tab-pane height" id="tab2">
+      <div class="new_comment well comment" id="new_comment">
+        <div id="new_comment_login" class="pull-left"></div>
+        <div id="new_comment_mark" class="pull-right"></div>
+        <div class="clear"></div>
+        <div id="new_comment_text" class="text"></div>
+        <div id="new_comment_date" class="pull-left"></div>
+        <div class="clear"></div>
+      </div>
+
+      {% if comments %}          
+        {% for com in comments %}
+          <div class="well comment">
+            <div class="pull-left">{{ com.login }}</div>
+            <div class="pull-right">Оценка {{ com.mark }} из 10</div>
+            <div class="clear"></div>
+            <div class="text">{{ com.comment_text}}</div>
+            <div class="pull-left">{{ com.comment_date }}</div>
+            <div class="clear"></div>
+          </div>
+        {% endfor %}	 
+      {% else %}
+        <div class="info">Пока никто не оставил отзыв на данную книгу</div>
+      {% endif %}
+    </div>
+  </div>
+</div>

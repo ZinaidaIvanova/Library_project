@@ -1,0 +1,27 @@
+<form name="edit_user" enctype="multipart/form-data" method="post" action="profile_change_handler.php">
+  <input type="hidden" name="user_id" id="user_id" value="{{ log.id }}">
+
+  <p class="input_name">Логин</p>
+  <input type="text" name="login" class="input_field" placeholder="Введите логин">
+
+  <p class="input_name">Фамилия</p>
+  <input type="text" class="input_field" name="last_name"  placeholder="Введите фамилию">
+
+  <p class="input_name">Имя</p>
+  <input type="text" class="input_field" name="first_name" placeholder="Введите логин">
+
+  <p class="input_name">Е-mail</p>
+  <input type="text" class="input_field" name="e_mail" placeholder="Введите e-mail">   
+            
+  <p class="input_name">Пароль</p>
+  <input type="text" class="input_field" name="pass" placeholder="Введите пароль">
+
+  <p class="input_name">Фото</p>
+  <input type="file" name="upload"> 
+
+  <div class="message">
+    <input type="submit" value="Изменить" class="btn button pull-left">
+    <div class="clear"></div>
+  </div>
+</form>
+<div class="clear bottom"></div>
